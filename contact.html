@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | PlantHaven Care</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Same CSS as index.html */
+        :root {
+            --primary: #4a6f28;
+            --secondary: #8BA888;
+            --accent: #B6C197;
+            --light: #F0F4EF;
+            --dark: #0D2107;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1585320806297-9794b3e4eeae');
+            background-size: cover;
+            background-position: center;
+            min-height: 50vh;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .leaf-icon {
+            color: var(--primary);
+        }
+        
+        .contact-point {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .contact-point h3 {
+            color: var(--primary);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        
+        .contact-form-container {
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+        }
+        
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.375rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-form button {
+            background-color: var(--primary);
+            color: white;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            transition: background-color 0.3s ease;
+        }
+        
+        .contact-form button:hover {
+            background-color: var(--dark);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-leaf text-3xl leaf-icon"></i>
+                <a href="index.html" class="text-2xl font-bold text-green-800">PlantHaven Care</a>
+            </div>
+            
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="nav-link text-gray-700 hover:text-green-800">Home</a>
+                <a href="privacy.html" class="nav-link text-gray-700 hover:text-green-800">Privacy</a>
+                <a href="terms.html" class="nav-link text-gray-700 hover:text-green-800">Terms & conditions</a>
+                <a href="cookies.html" class="nav-link text-gray-700 hover:text-green-800">Cookies</a>
+                <a href="contact.html" class="nav-link text-gray-700 hover:text-green-800" aria-current="page">Contact us</a>
+            </div>
+            
+            <button class="md:hidden text-gray-700">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero flex items-center justify-center text-center text-white relative">
+        <div class="container mx-auto px-4 py-20 relative z-10">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Contact Us</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-4xl mx-auto">We'd love to hear from you! Reach out for inquiries, support, or to schedule a consultation.</p>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="contact-form-container">
+                <h2 class="text-2xl font-bold text-green-800 mb-6">Send Us a Message</h2>
+                <form class="contact-form">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="name" class="block text-gray-700 mb-2">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 mb-2">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="phone" class="block text-gray-700 mb-2">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-gray-700 mb-2">Subject</label>
+                            <select id="subject" name="subject">
+                                <option value="general">General Inquiry</option>
+                                <option value="service">Service Inquiry</option>
+                                <option value="quote">Request a Quote</option>
+                                <option value="support">Customer Support</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-gray-700 mb-2">Your Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="w-full md:w-auto">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-green-800 mb-4">Contact Information</h2>
+                <div class="w-20 h-1 bg-green-600 mx-auto mb-4"></div>
+                <p class="text-gray-600">Find all the ways you can reach us for your gardening needs</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="text-center">
+                    <div class="bg-green-100 p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-map-marker-alt text-green-700 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-green-800 mb-2">Our Location</h3>
+                    <p class="text-gray-600">853 Broadway,<br> New York,<br> NY 10003, USA</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-green-100 p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-phone-alt text-green-700 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-green-800 mb-2">Phone Numbers</h3>
+                    <p class="text-gray-600">Main: (888) 255-6666<br>Support: (123) 456-7891<br>Fax: (123) 456-7892</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-green-100 p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-envelope text-green-700 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-green-800 mb-2">Email Addresses</h3>
+                    <p class="text-gray-600">General: info@planthaven.com<br>Support: support@planthaven.com<br>Sales: sales@planthaven.com</p>
+                </div>
+            </div>
+
+            <div class="contact-content">
+                <!-- Point 1 -->
+                <div class="contact-point">
+                    <h3>1. General Inquiries</h3>
+                    <p class="text-gray-600">For general questions about our services, company information, or any other non-specific inquiries, please use our contact form or email us at info@planthaven.com. Our customer service team typically responds within 24-48 hours during business days. For faster response, consider calling our main office line during business hours.</p>
+                </div>
+
+                <!-- Point 2 -->
+                <div class="contact-point">
+                    <h3>2. Service Requests</h3>
+                    <p class="text-gray-600">To request our gardening services or schedule a consultation, please fill out our contact form with details about your project. Our service coordinator will contact you within 1 business day to discuss your needs and schedule an appointment. For urgent service requests, please call our service hotline at (123) 456-7893.</p>
+                </div>
+
+                <!-- Point 3 -->
+                <div class="contact-point">
+                    <h3>3. Customer Support</h3>
+                    <p class="text-gray-600">Our dedicated support team is available to assist with any issues regarding existing services, billing questions, or account management. Contact them via email at support@planthaven.com or call (123) 456-7891 during business hours. For after-hours emergencies related to active service contracts, please use our emergency contact number provided in your service agreement.</p>
+                </div>
+
+                <!-- Point 4 -->
+                <div class="contact-point">
+                    <h3>4. Business Hours</h3>
+                    <p class="text-gray-600">Our main office is open Monday through Friday from 8:00 AM to 6:00 PM EST, and Saturdays from 9:00 AM to 2:00 PM EST. We are closed on Sundays and major holidays. Field services may be available outside these hours by special arrangement. Administrative staff are available by phone and email during business hours only.</p>
+                </div>
+
+                <!-- Point 5 -->
+                <div class="contact-point">
+                    <h3>5. Emergency Contacts</h3>
+                    <p class="text-gray-600">For urgent matters related to active service contracts that require immediate attention (such as tree emergencies or irrigation system failures), please call our 24/7 emergency line at (123) 456-7899. This line is monitored around the clock for genuine emergencies only. Non-emergency calls to this number may be subject to service charges.</p>
+                </div>
+
+                <!-- Point 6 -->
+                <div class="contact-point">
+                    <h3>6. Mailing Address</h3>
+                    <p class="text-gray-600">All written correspondence, including payments and formal notices, should be sent to our corporate office at: PlantHaven Care, 853 Broadway, New York, NY 10003, USA. Please allow 3-5 business days for processing of mailed items. For time-sensitive matters, we recommend using email or phone contact methods instead.</p>
+                </div>
+
+                <!-- Point 7 -->
+                <div class="contact-point">
+                    <h3>7. Visiting Our Office</h3>
+                    <p class="text-gray-600">Our corporate office is open to visitors by appointment only. To schedule an in-person meeting, please contact us in advance. We have limited parking available, so please let us know if you'll be driving. Our office is wheelchair accessible, and we can arrange for special accommodations with prior notice.</p>
+                </div>
+
+                <!-- Point 8 -->
+                <div class="contact-point">
+                    <h3>8. Social Media</h3>
+                    <p class="text-gray-600">Connect with us on social media for updates, tips, and community engagement. You can find us on Facebook (@PlantHavenCare), Instagram (@PlantHavenCare), and Twitter (@PlantHaven). While we monitor these platforms regularly, they are not the best method for service requests or urgent matters - please use our official contact channels for those needs.</p>
+                </div>
+
+                <!-- Point 9 -->
+                <div class="contact-point">
+                    <h3>9. Feedback and Complaints</h3>
+                    <p class="text-gray-600">We value your feedback and take all complaints seriously. Please send detailed feedback to feedback@planthaven.com or use our contact form. For complaints, include relevant details like service dates, names of staff involved, and any supporting documentation. Our customer relations manager will investigate and respond within 3 business days.</p>
+                </div>
+
+                <!-- Point 10 -->
+                <div class="contact-point">
+                    <h3>10. Careers and Employment</h3>
+                    <p class="text-gray-600">For employment opportunities, please send your resume to careers@planthaven.com. Include the position you're applying for in the subject line. We review applications on a rolling basis and will contact qualified candidates for interviews. No phone calls please - we'll reach out if we'd like to schedule an interview.</p>
+                </div>
+
+                <!-- Point 11 -->
+                <div class="contact-point">
+                    <h3>11. Vendor and Supplier Inquiries</h3>
+                    <p class="text-gray-600">Businesses interested in becoming vendors or suppliers should contact our procurement department at procurement@planthaven.com. Include information about your company, products/services, and any certifications. We evaluate new suppliers quarterly and will contact you if there's potential for partnership.</p>
+                </div>
+
+                <!-- Point 12 -->
+                <div class="contact-point">
+                    <h3>12. Press and Media</h3>
+                    <p class="text-gray-600">Members of the press should direct inquiries to our communications team at press@planthaven.com. Please include your name, media outlet, deadline, and specific questions. We aim to respond to media inquiries within 24 hours. For urgent matters, please call our media line at (123) 456-7894 and identify yourself as press.</p>
+                </div>
+
+                <!-- Point 13 -->
+                <div class="contact-point">
+                    <h3>13. Community Partnerships</h3>
+                    <p class="text-gray-600">For organizations seeking partnerships, sponsorships, or community collaborations, please email partnerships@planthaven.com with details about your organization and proposed partnership. We review partnership requests monthly and prioritize initiatives aligned with our mission of sustainable gardening and environmental education.</p>
+                </div>
+
+                <!-- Point 14 -->
+                <div class="contact-point">
+                    <h3>14. Educational Programs</h3>
+                    <p class="text-gray-600">Schools and educational institutions interested in our gardening programs or workshops can contact education@planthaven.com. We offer both in-school programs and field trips to our demonstration gardens. Please include your institution's name, grade levels, and preferred program dates in your inquiry.</p>
+                </div>
+
+                <!-- Point 15 -->
+                <div class="contact-point">
+                    <h3>15. Franchise Opportunities</h3>
+                    <p class="text-gray-600">Entrepreneurs interested in franchising opportunities with PlantHaven Care should contact franchise@planthaven.com for our franchise information packet. We're currently expanding in select markets and welcome inquiries from qualified candidates with landscaping or business management experience.</p>
+                </div>
+
+                <!-- Point 16 -->
+                <div class="contact-point">
+                    <h3>16. Investor Relations</h3>
+                    <p class="text-gray-600">For investor inquiries, please contact investors@planthaven.com. Our investor relations team can provide information about our company performance, growth strategy, and investment opportunities. All investor communications are handled with strict confidentiality and in compliance with securities regulations.</p>
+                </div>
+
+                <!-- Point 17 -->
+                <div class="contact-point">
+                    <h3>17. International Inquiries</h3>
+                    <p class="text-gray-600">For international clients or partners, please contact international@planthaven.com. While we're currently based in the United States, we welcome inquiries from abroad regarding potential collaborations, knowledge sharing, or expansion opportunities. Correspondence in languages other than English may experience delayed responses.</p>
+                </div>
+
+                <!-- Point 18 -->
+                <div class="contact-point">
+                    <h3>18. Accessibility Concerns</h3>
+                    <p class="text-gray-600">If you encounter any accessibility barriers on our website or at our facilities, please contact accessibility@planthaven.com. We're committed to making our services accessible to all and will address accessibility issues promptly. For immediate assistance, call our accessibility hotline at (123) 456-7895.</p>
+                </div>
+
+                <!-- Point 19 -->
+                <div class="contact-point">
+                    <h3>19. Billing and Payments</h3>
+                    <p class="text-gray- 600">For questions regarding billing, payments, or invoices, please contact our billing department at billing@planthaven.com. Include your account number and a brief description of your inquiry. We aim to respond to billing inquiries within 2 business days. For urgent billing issues, please call our billing hotline at (123) 456-7896 during business hours.</p>
+                </div>
+
+                <!-- Point 20 -->
+                <div class="contact-point">
+                    <h3>20. Service Area</h3>
+                    <p class="text-gray-600">PlantHaven Care provides services primarily in New York City and surrounding areas. If you're unsure whether we service your location, please reach out via our contact form or call us. We are continually expanding our service area, so check back for updates on new locations.</p>
+                </div>
+
+                <!-- Point 21 -->
+                <div class="contact-point">
+                    <h3>21. Gardening Tips and Resources</h3>
+                    <p class="text-gray-600">For gardening tips, resources, and advice, visit our blog or subscribe to our newsletter. You can also reach out with specific gardening questions through our contact form. Our team of experts is happy to provide guidance on plant care, pest management, and sustainable gardening practices.</p>
+                </div>
+
+                <!-- Point 22 -->
+                <div class="contact-point">
+                    <h3>22. Workshops and Events</h3>
+                    <p class="text-gray-600">We host various workshops and events throughout the year focused on gardening, sustainability, and community engagement. To learn more about upcoming events or to register, please visit our events page or contact us directly. We encourage community participation and look forward to seeing you at our events!</p>
+                </div>
+
+                <!-- Point 23 -->
+                <div class="contact-point">
+                    <h3>23. Sustainability Initiatives</h3>
+                    <p class="text-gray-600">PlantHaven Care is committed to sustainability and environmental stewardship. If you're interested in learning more about our sustainability initiatives or how you can get involved, please reach out via our contact form or email sustainability@planthaven.com. We believe in working together to create a greener future.</p>
+                </div>
+
+                <!-- Point 24 -->
+                <div class="contact-point">
+                    <h3>24. Community Engagement</h3>
+                    <p class="text-gray-600">We value our community and strive to engage with local organizations and residents. If you have ideas for community projects or partnerships, please contact us at community@planthaven.com. We are always looking for ways to give back and support local initiatives.</p>
+                </div>
+
+                <!-- Point 25 -->
+                <div class="contact-point">
+                    <h3>25. Testimonials and Reviews</h3>
+                    <p class="text-gray-600">We love hearing from our customers! If you would like to share your experience with PlantHaven Care, please send your testimonial to testimonials@planthaven.com. Your feedback helps us improve our services and provides valuable insights for potential customers.</p>
+                </div>
+
+                <!-- Point 26 -->
+                <div class="contact-point">
+                    <h3>26. Gardening Supplies and Products</h3>
+                    <p class="text-gray-600">We offer a range of gardening supplies and products for sale. For inquiries about specific products, pricing, or availability, please contact our sales team at sales@planthaven.com. We can also provide recommendations based on your gardening needs.</p>
+                </div>
+
+                <!-- Point 27 -->
+                <div class="contact-point">
+                    <h3>27. Plant Care Services</h3>
+                    <p class="text-gray-600">If you're interested in our plant care services, including maintenance and consultation, please fill out our contact form or call us directly. Our team can provide tailored solutions to meet your gardening needs, whether for residential or commercial properties.</p>
+                </div>
+
+                <!-- Point 28 -->
+                <div class="contact-point">
+                    <h3>28. Pest Management Services</h3>
+                    <p class="text-gray-600">For pest management inquiries, please contact us at pestcontrol@planthaven.com. We offer eco-friendly pest control solutions and can provide assessments and treatment plans tailored to your specific situation. Our experts are trained to handle various pest issues safely and effectively.</p>
+                </div>
+
+                <!-- Point 29 -->
+                <div class="contact-point">
+                    <h3>29. Landscape Design Services</h3>
+                    <p class="text-gray-600">If you're looking for landscape design services, please reach out via our contact form or call us. Our design team can help create beautiful and functional outdoor spaces tailored to your preferences and needs. We work with both residential and commercial clients.</p>
+                </div>
+
+                <!-- Point 30 -->
+                <div class="contact-point">
+                    <h3>30. Seasonal Services</h3>
+                    <p class="text-gray-600">We offer seasonal services such as spring clean-up, fall leaf removal, and winterization. For more information on our seasonal offerings, please contact us or visit our services page. We can help ensure your garden is well-maintained year-round.</p>
+                </div>
+
+                <!-- Point 31 -->
+                <div class="contact-point">
+                    <h3>31. Custom Gardening Solutions</h3>
+                    <p class="text-gray-600">If you have specific gardening needs or projects in mind, we can create custom solutions tailored to your requirements. Please reach out to us with your ideas, and we will work with you to develop a plan that meets your goals.</p>
+                </div>
+
+                <!-- Point 32 -->
+                <div class="contact-point">
+                    <h3>32. Gardening Workshops for Kids</h3>
+                    <p class="text-gray-600">We offer gardening workshops specifically designed for children to encourage their interest in nature and gardening. For more information or to register your child, please contact us at education@planthaven.com. We believe in fostering a love for gardening from a young age.</p>
+                </div>
+
+                <!-- Point 33 -->
+                <div class="contact-point">
+                    <h3>33. Collaborations with Local Artists</h3>
+                    <p class="text-gray-600">PlantHaven Care collaborates with local artists to create unique garden installations and art pieces. If you're an artist interested in partnering with us, please reach out via our contact form or email us at collaborations@planthaven.com. We love supporting local talent!</p>
+                </div>
+
+                <!-- Point 34 -->
+                <div class="contact-point">
+                    <h3>34. Gardening Resources for Schools</h3>
+                    <p class="text-gray-600">We provide resources and support for schools looking to implement gardening programs. If you're an educator interested in starting a school garden, please contact us at education@planthaven.com. We can offer guidance, materials, and even hands-on assistance.</p>
+                </div>
+
+                <!-- Point 35 -->
+                <div class="contact-point">
+                    <h3>35. Community Garden Initiatives</h3>
+                    <p class="text-gray-600">If you're interested in starting or joining a community garden, please reach out to us. We can provide resources, support, and guidance to help establish a successful community gardening project. Contact us at community@planthaven.com for more information.</p>
+                </div>
+
+                <!-- Point 36 -->
+                <div class="contact-point">
+                    <h3>36. Gardening Blogs and Articles</h3>
+                    <p class="text-gray-600">For those interested in gardening tips and advice, we regularly publish blogs and articles on our website. If you have specific topics you'd like us to cover, please let us know through our contact form. We love engaging with our community and sharing knowledge!</p>
+                </div>
+
+                <!-- Point 37 -->
+                <div class="contact-point">
+                    <h3>37. Environmental Education Programs</h3>
+                    <p class="text-gray-600">We offer environmental education programs for all ages, focusing on sustainable practices and conservation. If you're interested in scheduling a program for your group or organization, please contact us at education@planthaven.com. We aim to inspire and educate about the importance of environmental stewardship.</p>
+                </div>
+
+                <!-- Point 38 -->
+                <div class="contact-point">
+                    <h3>38. Gardening Equipment Rentals</h3>
+                    <p class="text-gray-600">For those who need gardening equipment for a short period, we offer rental services. Please contact us for a list of available equipment and rental terms. We can help you find the right tools for your gardening projects without the need for a large investment.</p>
+                </div>
+
+                <!-- Point 39 -->
+                <div class="contact-point">
+                    <h3>39. Plant Adoption Program</h3>
+                    <p class="text-gray-600">Join our plant adoption program to receive plants suited for your environment and care tips. If you're interested in adopting a plant, please contact us for more details. We believe in promoting plant care and helping our community grow greener.</p>
+                </div>
+
+                <!-- Point 40 -->
+                <div class="contact-point">
+                    <h3>40. Final Thoughts</h3>
+                    <p class="text-gray-600">Thank you for considering PlantHaven Care for your gardening needs. We are dedicated to providing exceptional service and support to our clients. If you have any questions or need assistance, please don't hesitate to reach out. We look forward to hearing from you!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-green-800 text-white py-6">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2023 PlantHaven Care. All rights reserved.</p>
+            <p>853 Broadway, New York, NY 10003, USA| Phone: (888) 255-6666</p>
+            <div class="flex justify-center space-x-4 mt-4">
+                <a href="#" class="text-white hover:text-gray-300"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-white hover:text-gray-300"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white hover:text-gray-300"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-white hover:text-gray-300"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
